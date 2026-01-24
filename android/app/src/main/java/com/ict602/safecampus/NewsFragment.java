@@ -34,7 +34,10 @@ public class NewsFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(
+            @NonNull View view,
+            @Nullable Bundle savedInstanceState
+    ) {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.recyclerNews);
@@ -44,26 +47,20 @@ public class NewsFragment extends Fragment {
         adapter = new NewsAdapter(newsList);
         recyclerView.setAdapter(adapter);
 
-        // 🔥 Firebase Firestore
+        // 🔥 Firestore
         db = FirebaseFirestore.getInstance();
 
-        // 🔥 READ from Firestore
         db.collection("news")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     newsList.clear();
-
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                         String title = doc.getString("title");
                         String description = doc.getString("description");
-
                         newsList.add(new NewsModel(title, description));
                     }
-
                     adapter.notifyDataSetChanged();
                 })
-                .addOnFailureListener(e -> {
-                    e.printStackTrace();
-                });
+                .addOnFailureListener(Throwable::printStackTrace);
     }
 }
