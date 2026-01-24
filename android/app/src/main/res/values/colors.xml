@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- App palette (updated) -->
+    <color name="colorPrimary">#89d2a3</color>
+    <color name="colorPrimaryVariant">#b5e8a4</color>
+    <color name="colorSecondary">#ffc8c4</color>
+    <color name="colorSecondaryVariant">#ffb0c4</color>
+    <color name="colorAccent">#ff97c4</color>
+
+    <!-- Retain common system colors (adjust if you want them themed too) -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Optional: legacy/support names used by some templates -->
+    <color name="md_theme_light_primary">#89d2a3</color>
+    <color name="md_theme_light_onPrimary">#000000</color>
+    <color name="md_theme_light_secondary">#ffc8c4</color>
+    <color name="md_theme_light_onSecondary">#000000</color>
+
 </resources>
