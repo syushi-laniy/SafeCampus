@@ -6,4 +6,6 @@
     </style>
 
     <style name="Theme.SafeCampus" parent="Base.Theme.SafeCampus" />
+    <style name="Theme.SafeCampus" parent="Theme.Material3.DayNight.NoActionBar">
+
 </resources>
